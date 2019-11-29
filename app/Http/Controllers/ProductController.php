@@ -22,11 +22,13 @@ class ProductController extends Controller
 
         $result = $newProduct->save(); //retorna boleano
 
-        if($result){
+/*         if($result){
             echo "deu certo sem querry";
         }else {
             echo "deu ruim";
-        }
+        } */
+
+        return view('products.form', ["result"=>$result]);
 
 /*      //Jeito não recomendado de fazer, dois métodos para uma função 
         //verificar se estou recebendo um get ou um post

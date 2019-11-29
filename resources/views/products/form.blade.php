@@ -32,6 +32,19 @@
         </div>
         <button class="btn btn-success" type="submit">Enviar</button>
     </form>
+
+    <div class="row">
+        <div class="col-md-12">
+            @if(isset($result)) <!-- verifica se existe -->
+                @if($result) <!-- verifica se é false -->
+                    <h1>Deu certooooo!</h1>
+                @else
+                    <h1>Não deu certo</h1>
+                @endif
+            @endif
+        </div>
+    </div>
+
 </section>
 
 @endsection
