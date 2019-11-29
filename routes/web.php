@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/produtos/cadastrar','ProductController@viewForm');
+
+//Para pegar as informações do formulário para salvar:
+Route::post('/produtos/cadastrar','ProductController@create');

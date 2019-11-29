@@ -2,24 +2,35 @@
 
 @section('content')
 
-<section class="container">
-    <form action="" method="post" enctype="multipart/form-data">
+<section class="container col-md-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Cadastro de Produto</h1>
+        </div>
+    </div>
+    <form action="/produtos/cadastrar" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
             <label for="nameProduct">Nome do Produto</label>
             <input class="form-control" type="text" name="nameProduct" id="nameProduct">
         </div>
         <div class="form-group">
-            <label for="description">Descrição</label>
-            <input class="form-control" type="text" name="description" id="description">
+            <label for="descriptionProduct">Descrição</label>
+            <textarea class="form-control" type="text" name="descriptionProduct" id="descriptionProduct"></textarea>
         </div>
         <div class="form-group">
-            <label for="quantity">Quantidade</label>
-            <input class="form-control" type="number" name="quantity" id="quantity">
+            <label for="quantityProduct">Quantidade</label>
+            <input class="form-control" type="number" name="quantityProduct" id="quantityProduct">
         </div>
         <div class="form-group">
-            <label for="price">Preço</label>
-            <input class="form-control" type="text" name="price" id="price">
+            <label for="priceProduct">Preço</label>
+            <input class="form-control" type="number" step=".01" name="priceProduct" id="priceProduct">
         </div>
+        <div class="form-group">
+            <label for="imgProduct">Foto do Produto</label>
+            <input class="form-control" type="file" name="imgProduct" id="imgProduct">
+        </div>
+        <button class="btn btn-success" type="submit">Enviar</button>
     </form>
 </section>
 
