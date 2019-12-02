@@ -25,4 +25,5 @@ Route::get('/produtos/cadastrar','ProductController@viewForm');
 Route::post('/produtos/cadastrar','ProductController@create');
 
 //Exibir formulário de atualização:
-Route::get('/produtos/atualizar/{id}','ProductController@viewFormUpdate');
+Route::get('/produtos/atualizar/{id?}','ProductController@viewFormUpdate');
+//coloca ? para ser opcional

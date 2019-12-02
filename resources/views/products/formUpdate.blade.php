@@ -36,6 +36,8 @@
         </div>
         <button class="btn btn-success" type="submit">Atualizar Produto</button>
     </form>
+    @else 
+        <h3>Você não passou um id, ou o produto não existe</h3>
     @endif
 
     <div class="row">

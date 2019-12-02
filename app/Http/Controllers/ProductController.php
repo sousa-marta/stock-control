@@ -43,10 +43,14 @@ class ProductController extends Controller
         return view('products.formRegister');
     }
 
-    public function viewFormUpdate(Request $request, $id){
+    public function viewFormUpdate(Request $request, $id=0){ //valor padrão, se não passar nenhum id
         //Para atualizar, devemos buscar um objeto ao invés de criar. Usando rotas parametrizadas.
-        $product = Product::find($id);
-        return view('products.formUpdate', ["product" =>$product]); //mandando pra view em forma de variável
+        $product = Product::find($id); //retorna boleano
+        if($product){
+            return view('products.formUpdate', ["product" =>$product]); //mandando pra view em forma de variável
+        }else {
+            return view('products.formUpdate'); //não passa nenhum valor para view para 'ativar' isset
+        }
     }
 
 
