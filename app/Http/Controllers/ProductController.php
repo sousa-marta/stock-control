@@ -53,14 +53,29 @@ class ProductController extends Controller
         }
     }
 
+    public function update(Request $request){
+        $product = Product::find($request->idProduct);
+        $product->name = $request->nameProduct;
+        $product->description = $request->descriptionProduct;
+        $product->quantity = $request->quantityProduct;
+        $product->price = $request->priceProduct;
+        //$product->user_id = Auth::user()->id; //não vamos usar pq não queremos que sobrescreva quem salvou da última vez
+        
+        $result = $product->save(); //retorna boleano
 
+        return view('products.formUpdate', ["result"=>$result]);
+    }
 
-    public function delete(Request $request){
-        // para deletar vc vai usar Product::destroy($id);
+    public function delete(Request $request, $id=0){
+        $result = Product::destroy($id);
+        if($result){
+            return redirect('/produtos');
+        }
     }
 
     public function viewAllProducts(Request $request){
-        //vai precisar do Product::All
+        $listProducts = Product::all();
+        return view('products.productsList',["listProducts"=>$listProducts]);
     }
 
     public function viewOneProduct(Request $request){

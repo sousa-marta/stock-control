@@ -27,3 +27,10 @@ Route::post('/produtos/cadastrar','ProductController@create');
 //Exibir formulário de atualização:
 Route::get('/produtos/atualizar/{id?}','ProductController@viewFormUpdate');
 //coloca ? para ser opcional
+
+//Para salvar informações do form de atualização
+Route::post('/produtos/atualizar','ProductController@update');
+
+Route::get('/produtos','ProductController@viewAllProducts');
+
+Route::get('/produtos/deletar/{id?}','ProductController@delete'); //não precisaria da ?

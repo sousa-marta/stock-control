@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="descriptionProduct">Descrição</label>
-            <textarea class="form-control" type="text" name="descriptionProduct" id="descriptionProduct">{{$product->name}}</textarea>
+            <textarea class="form-control" type="text" name="descriptionProduct" id="descriptionProduct">{{$product->description}}</textarea>
         </div>
         <div class="form-group">
             <label for="quantityProduct">Quantidade</label>
@@ -36,6 +36,11 @@
         </div>
         <button class="btn btn-success" type="submit">Atualizar Produto</button>
     </form>
+
+    <!-- Não queremos que o formulário nem a mensagem de erro apareça se houver variável $result (salvamos no banco de dados). Se existir resultado, não faz nada, pula o else da mensagem de erro. -->
+    @elseif(isset($result)) 
+    
+
     @else 
         <h3>Você não passou um id, ou o produto não existe</h3>
     @endif
