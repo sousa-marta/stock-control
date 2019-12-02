@@ -23,3 +23,6 @@ Route::get('/produtos/cadastrar','ProductController@viewForm');
 
 //Para pegar as informações do formulário para salvar:
 Route::post('/produtos/cadastrar','ProductController@create');
+
+//Exibir formulário de atualização:
+Route::get('/produtos/atualizar/{id}','ProductController@viewFormUpdate');
