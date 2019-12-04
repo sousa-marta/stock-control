@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //
-    public function users(){
-        return $this->belongsTo('App\Users'); //faz o relacionamento entre as entidades
+    //TEM QUE SER NO SINGULAR, POIS UM USUÁRIO TEM N PRODUTOS (se colocar no plural, vai dar ruim!!)
+    public function user(){
+        return $this->belongsTo('App\User'); //faz o relacionamento entre as entidades
     }
 
 

@@ -30,7 +30,7 @@
                                 <td>{{$product->description}}</td>
                                 <td>{{$product->quantity}}</td>
                                 <td>R$ {{$product->price}}</td>
-                                <td>Usuário</td> <!-- pegando do Product.php. recebe um id e retorna um objeto -->
+                                <td>{{$product->user->name}}</td> <!-- pegando do Product.php. recebe um id e retorna um objeto -->
                                 <td>{{$product->created_at}}</td>
                                 <td>{{$product->updated_at}}</td>
                                 <td>
