@@ -37,9 +37,9 @@
         <div class="col-md-12">
             @if(isset($result)) <!-- verifica se existe -->
                 @if($result) <!-- verifica se é false -->
-                    <h1>Deu certooooo!</h1>
+                    <h1>Produto cadastrado com sucesso!</h1>
                 @else
-                    <h1>Não deu certo</h1>
+                    <h1>Não foi possível cadastrar esse produto.</h1>
                 @endif
             @endif
         </div>

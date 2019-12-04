@@ -17,9 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Rota para conectar e receber infos do google
+Route::get('/login/google','Auth\LoginController@redirectToGoogle');
+Route::get('/login/google/callback','Auth\LoginController@receiveDataGoogle');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/produtos/cadastrar','ProductController@viewForm');
+Route::get('/produtos/cadastrar','ProductController@viewForm')->middleware('checkuser');
 
 //Para pegar as informações do formulário para salvar:
 Route::post('/produtos/cadastrar','ProductController@create');
@@ -33,4 +37,4 @@ Route::post('/produtos/atualizar','ProductController@update');
 
 Route::get('/produtos','ProductController@viewAllProducts');
 
-Route::get('/produtos/deletar/{id?}','ProductController@delete'); //não precisaria da ?
+Route::get('/produtos/deletar/{id?}','ProductController@delete'); // (?) opcional
